@@ -6,13 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollBtn = document.getElementById('scrollTopBtn');
     const sections = document.querySelectorAll('section[id]');
 
-    // Mobile view
     navToggle.addEventListener('click', function() {
         navMenu.classList.toggle('active');
         navToggle.classList.toggle('active');
     });
 
-    // Closing of mobile menu when clicked on a link
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             navMenu.classList.remove('active');
@@ -20,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Scroll event handler
     window.addEventListener('scroll', function() {
         if (window.scrollY > 100) {
             navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
@@ -28,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
         }
 
-        // Highlight active section in nav
         const scrollPosition = window.scrollY + 150;
 
         sections.forEach(section => {
@@ -46,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Show ya fir hide scroll to top button
         if (window.scrollY > 300) {
             scrollBtn.classList.add('show');
         } else {
@@ -54,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Scroll to top bhai
     scrollBtn.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
@@ -62,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add stagger animation to cards
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -80,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // For observing all cards and photos
     document.querySelectorAll('.card, .gallery-item').forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(30px)';
@@ -88,7 +80,6 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 
-    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();

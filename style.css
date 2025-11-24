@@ -34,6 +34,13 @@ body {
   border-radius: 60%;
 }
 
+.menu-btn {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
 .navbar h1 {
   font-size: 20px;
   font-weight: 600;
@@ -55,6 +62,30 @@ body {
 .nav-links a:hover,
 .nav-links a.active {
   color: #ffdede;
+}
+
+@media (max-width: 950px) {
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    right: -100%;
+    width: 220px;
+    background: #8B0000;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 20px;
+    transition: 0.3s ease-in-out;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
 }
 
 /* Hero */
@@ -191,7 +222,7 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 992px) {
+@media (max-width: 1000px) {
   .programs-grid {
     grid-template-columns: 1fr;
   }
@@ -262,7 +293,6 @@ body {
   color: #fff;
 }
 
-/* Event Image on Right */
 .event-image {
   flex: 1;
   text-align: right;
@@ -277,7 +307,7 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .event-box {
     flex-direction: column;
     text-align: center;
@@ -408,15 +438,16 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .contact-box {
     flex-direction: column;
     text-align: center;
   }
 
   .contact-map {
-    text-align: center;
+    align-items: center;
     margin-top: 1rem;
+    width: 90%;
   }
 
   .contact-map iframe {
@@ -494,7 +525,7 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
